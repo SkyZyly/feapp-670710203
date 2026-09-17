@@ -5,6 +5,8 @@ import SearchBox from '../components/SearchBox';
 
 function Movies() {
   const [query, setQuery] = useState('');
+
+  const q = query.trim().toLowerCase();
   const shown = movies.filter(m => m.title.toLowerCase().includes(query.toLowerCase()));
   return (
     <div className="mx-auto max-w-5xl p-8">
