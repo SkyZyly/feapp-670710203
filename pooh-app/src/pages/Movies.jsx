@@ -7,7 +7,7 @@ function Movies() {
   const [query, setQuery] = useState('');
 
   const q = query.trim().toLowerCase();
-  const shown = movies.filter(m => m.title.toLowerCase().includes(query.toLowerCase()));
+  const shown = movies.filter(m => m.title.toLowerCase().split(' ').some(word => word.startsWith(q)));
   return (
     <div className="mx-auto max-w-5xl p-8">
       <h1 className="mb-6 text-2xl font-bold text-slate-800">หนังทั้งหมด</h1>
